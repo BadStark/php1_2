@@ -206,16 +206,21 @@ function gender($my_name)
     }
 }
 
-$is_name = 'Саша';
+
+$is_name = 'Геннадий';
 $one_gend = gender($is_name);
-if ($one_gend == 'male') {
-    echo 'Имя ' . $is_name . ' - мужское';
-}
-elseif ($one_gend == 'female') {
-    echo 'Имя ' . $is_name . ' - женское';
-}
-else {
-    echo 'Имя ' . $is_name . ' - скорее всего может быть как мужским, так и женским именем. Пол не определен.';
+
+switch ($one_gend){
+    case 'male':
+        echo 'Имя ' . $is_name . ' - мужское';
+        break;
+
+    case 'female':
+        echo 'Имя ' . $is_name . ' - женское';
+        break;
+        
+    default:
+        echo 'Имя ' . $is_name . ' - может быть как мужским, так и женским. Пол не определен.';
 }
 
 
